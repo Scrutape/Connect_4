@@ -73,6 +73,19 @@ NOT been found in a given direction.
         if count >= 4:
           return True
     return False
+
+'''
+is_board_full():
+A nested for loop iterating through each item in the 2D list and determining if there exists any open spaces for piece placement,
+if not, returns True and is used in the upcoming main() function to end the game in a tie.
+'''
+  
+  def is_board_full(self):
+    for row in self.board:
+      for cell in row:
+       if cell = ' ':
+         return False
+    return True
   
 '''
 main():
@@ -84,7 +97,13 @@ correct symbol, announce when a valid column pick cannot be executed because a c
 
 '''
   
-  
+  def is_board_full(self):
+    for row in self.board:
+      for cell in row:
+       if cell = ' ':
+         return False
+    return True
+   
   def main(self):
     self.board = self.create_board()
     player = 1
@@ -101,7 +120,12 @@ correct symbol, announce when a valid column pick cannot be executed because a c
               self.print_board()
               print(f"Player {player} wins!")
               break
-            player = 3 - player
+            elif self.is_board_full():
+              self.print_board()
+              print("It's a tie!")
+              break
+            else:
+              player = 3 - player
           else:
             print("Can't drop piece, choose another column.")
         else:
