@@ -25,19 +25,19 @@ class Connect_4:
       return False
     return True
 '''
- drop_piece():
- Places a piece in the lowest possible spot on the board. This is how it works: starting with the user input that passes
- the 'is_valid_move' check, it first subtracts 1 that input to provide an accurate index number to be used.
+drop_piece():
+Places a piece in the lowest possible spot on the board. This is how it works: starting with the user input that passes
+the 'is_valid_move' check, it first subtracts 1 that input to provide an accurate index number to be used.
  
- Second: the code uses a 'for' loop to iterate through a range representing the number of rows on a Connect 4 board (6), starting at
- the last (aka highest index value) list and stepping backwards to the first (aka lowest index value) list. The variable holding the
- iterations is 'row'.
+Second: the code uses a 'for' loop to iterate through a range representing the number of rows on a Connect 4 board (6), starting at
+the last (aka highest index value) list and stepping backwards to the first (aka lowest index value) list. The variable holding the
+iterations is 'row'.
  
- Immediately after, it uses the 'row' value, plus the 'col' value input by the player, to check if the list values are ' ' (blank)
- in that respective column, starting with the "bottom" (or highest index value) row and moving down the 'row' index each time the corresponding 'row'
- iteration decreases. The moment it finds a blank space ' ' it writes to the nested list index whatever symbol represents the currently assigned
- player, and returns a True value (indicating a piece was placed), and the row & col values at the index the symbol was placed at.
- 
+Immediately after, it uses the 'row' value, plus the 'col' value input by the player, to check if the list values are ' ' (blank)
+in that respective column, starting with the "bottom" (or highest index value) row and moving down the 'row' index each time the corresponding 'row'
+iteration decreases. The moment it finds a blank space ' ' it writes to the nested list index whatever symbol represents the currently assigned
+player, and returns a True value (indicating a piece was placed), and the row & col values at the index the symbol was placed at.
+
 ''' 
  
   def drop_piece(self, player, col):
@@ -100,7 +100,7 @@ correct symbol, announce when a valid column pick cannot be executed because a c
   def is_board_full(self):
     for row in self.board:
       for cell in row:
-       if cell = ' ':
+       if cell == ' ':
          return False
     return True
    
